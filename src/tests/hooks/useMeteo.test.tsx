@@ -19,6 +19,28 @@ const server = setupServer(
         })
       );
     }
+  ),
+  rest.get(
+    "https://randomuser.me/api/",
+    (req, res, ctx) => {
+      return res(
+        ctx.json({
+          results: [{
+            picture: {
+              thumbnail: ""
+            },
+            name: {
+              title:
+              "Mr",
+              first:
+              "Papa",
+              last:
+              "Noel",
+            }
+          }]
+        })
+      )
+    }
   )
 );
 
@@ -30,4 +52,10 @@ test("load meteo mock", async () => {
   const { container } = render(<App />);
   await waitFor(() => screen.getByText(/Météo actuel/i));
   expect(container.getElementsByTagName("img").length).toBe(1);
+});
+
+test("load randomuser mock", async () => {
+  const { container } = render(<App />);
+  await waitFor(() => screen.getByText(/Utilisateur/i));
+  expect(container.getElementsByTagName("p")[1].textContent).toBe("Mr Papa Noel");
 });
