@@ -45,4 +45,4 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
-![example workflow](https://github.com/Battalex/calculatorCI/actions/workflows/main.yml/badge.svg)
+![example workflow](https://github.com/Battalex/calculatorCI/actions/workflows/nodeci.yml/badge.svg)
