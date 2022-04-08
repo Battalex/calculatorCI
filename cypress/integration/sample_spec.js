@@ -46,7 +46,7 @@ describe("Calculator", () => {
         cy.contains("-").click();
         cy.contains("1").click();
         cy.contains("=").click();
-        cy.get(".result").contains("1");
+        cy.get(".result").contains("2");
       });
   });
   
